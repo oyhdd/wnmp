@@ -8,28 +8,30 @@
 
 #### 使用说明
 
-- 1、将项目解压后可放置于自定义的位置，然后运行 “开始.bat” 脚本即可一键启动nginx、php和mysql。
+- 1、将项目解压后可放置于自定义的位置，然后运行 “开始.bat” 脚本即可一键启动nginx、php和mysql，并自动打开127.0.0.1的网页。
 
 - 2、自己的项目代码放置在根目录的www目录下，然后可在nginx/conf/vhost/ 文件夹下添加自己的nginx配置文件，nginx的请求日志记录在根目录的logs下。
 
+- 3、启动成功后mysql的账号密码默认都是空，需要自行修改。
+
 ```
 server {
-listen 80;
-server_name localhost;
-root www/;
-location / {
-index index.php index.html index.htm;
-}
-location ~ \.php$ {
-#php56
-fastcgi_pass 127.0.0.1:9000;
-#php71
-#fastcgi_pass 127.0.0.1:9001;
-fastcgi_index index.php;
-fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-include fastcgi_params;
-}
-access_log logs/access.log main;
+    listen 80;
+    server_name localhost;
+    root www/;
+    location / {
+        index index.php index.html index.htm;
+    }
+    location ~ \.php$ {
+        #php56
+        fastcgi_pass 127.0.0.1:9000;
+        #php71
+        #fastcgi_pass 127.0.0.1:9001;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+    access_log logs/access.log main;
 }
 ```
 
