@@ -12,7 +12,7 @@ set base_path=%cd%
 set nginx_path=%base_path%\nginx
 set php5_path=%base_path%\php\php-5.6.36
 set php7_path=%base_path%\php\php-7.1.17
-set mysql_path=%base_path%\mySql
+set mysql_path=%base_path%\mysql
 
 echo Starting PHP5 FastCGI...
 RunHiddenConsole %php5_path%\php5-cgi.exe -b 127.0.0.1:9000 -c %php5_path%\php.ini
@@ -20,7 +20,7 @@ RunHiddenConsole %php5_path%\php5-cgi.exe -b 127.0.0.1:9000 -c %php5_path%\php.i
 echo Starting PHP7 FastCGI...
 RunHiddenConsole %php7_path%\php-cgi.exe -b 127.0.0.1:9001 -c %php7_path%\php.ini
 
-echo Starting nginx...
+echo Starting Nginx...
 RunHiddenConsole %nginx_path%\nginx.exe -c %nginx_path%\conf\nginx.conf
 
 echo Starting MySql...
