@@ -11,7 +11,7 @@ taskkill /F /IM mysqld.exe > nul
 set base_path=%cd%
 set nginx_path=%base_path%\nginx
 set php5_path=%base_path%\php\php-5.6.36
-set php7_path=%base_path%\php\php-7.1.17
+set php7_path=%base_path%\php\php-7.3.6
 set mysql_path=%base_path%\mysql
 
 echo Starting PHP5 FastCGI...

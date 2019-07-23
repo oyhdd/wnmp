@@ -1,6 +1,6 @@
 # wnmp
 
-一键搭建PHP运行环境，基于 Windows + Nginx(1.14) + PHP(5.6 & 7.1) + MySql(5.6)，无需安装，一键启动、停止和重启
+一键搭建PHP运行环境，基于 Windows + Nginx(1.14) + PHP(5.6 & 7.3) + MySql(5.6)，无需安装，一键启动、停止和重启
 
 ### 介绍
 
@@ -23,7 +23,7 @@ server {
     location ~ \.php$ {
         #php56
         fastcgi_pass 127.0.0.1:9000;
-        #php71
+        #php73
         #fastcgi_pass 127.0.0.1:9001;
         fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
@@ -39,13 +39,13 @@ server {
 
 > 备注：
 >
-> 若启动失败，有可能是端口已被占用（php56:9000，php71:9001，mysql:3306，nginx:80），需要先关闭被占用的端口再重新启动。
+> 若启动失败，有可能是端口已被占用（php56:9000，php73:9001，mysql:3306，nginx:80），需要先关闭被占用的端口再重新启动。
 >
 > 可运行 “端口查看.bat” 脚本，然后输入要查询端口号，即可看到被占用端口的PID，然后再将其关闭
 
 ### Xdebug调试
 
-已为PHP5.6和PHP7.1开启了Xdebug调试功能，可在对应版本的php.ini中查看或编辑Xdebug配置
+已为PHP5.6和PHP7.3开启了Xdebug调试功能，可在对应版本的php.ini中查看或编辑Xdebug配置
 
 ### 更换php版本
 
